@@ -1,21 +1,16 @@
-
-
-import './App.css'
-import Menu from './components/Menu'
-
+import Layout from "./components/Layout";
+import Employe from "./pages/Employe";
+import Home from "./pages/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
-
-  return (
-      <>
-          <Menu
-              user={{
-                  img: "/userplaceholder.jpg",
-                  name: "aziz manager",
-                  type: "HR Administrator",
-              }}
-          />
-      </>
-  );
+    return (
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<Home />} />
+                    <Route path="employe" element={<Employe />} />
+                </Route>
+            </Routes>
+    );
 }
 
-export default App
+export default App;
