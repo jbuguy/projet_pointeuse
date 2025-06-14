@@ -1,0 +1,57 @@
+import DisplayUser from "./DisplayUser";
+import MenuItem from "./MenuItem";
+import {
+    Home,
+    Users,
+    Calendar,
+    Network,
+    BarChart3,
+    Monitor,
+    Settings,
+    User,
+} from "lucide-react";
+export default function Menu({ user }) {
+    return (
+        <div className="mainMenu">
+            <div className="top">
+                <DisplayUser user={user} />
+                <hr />
+                <menu>
+                    <MenuItem icon={Home} text="Acceuil" link="/acceuil" />
+                    <MenuItem icon={Users} text="Employés" link="/employe" />
+                    <MenuItem
+                        icon={Calendar}
+                        text="Programme"
+                        link="/programme"
+                    />
+                    <MenuItem
+                        icon={Network}
+                        text="Hiérachie"
+                        link="hierachie"
+                    />
+                    <MenuItem
+                        icon={BarChart3}
+                        text="Statistiques"
+                        link="stat"
+                    />
+                    <MenuItem icon={Monitor} text="Machine" link="machine" />
+                </menu>
+            </div>
+            <div className="bottom">
+                <hr />
+                <menu>
+                    <MenuItem
+                        icon={Settings}
+                        text="Parameters"
+                        link="/parameter"
+                    />
+                    <MenuItem
+                        icon={User}
+                        text="Utilisateur"
+                        link="/utilisateur"
+                    />
+                </menu>
+            </div>
+        </div>
+    );
+}
