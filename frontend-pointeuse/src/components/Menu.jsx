@@ -9,6 +9,7 @@ import {
     Monitor,
     Settings,
     User,
+    Clock,
 } from "lucide-react";
 export default function Menu({ user }) {
     return (
@@ -27,14 +28,19 @@ export default function Menu({ user }) {
                     <MenuItem
                         icon={Network}
                         text="Hiérachie"
-                        link="hierachie"
+                        link="/hierachie"
                     />
                     <MenuItem
                         icon={BarChart3}
                         text="Statistiques"
-                        link="stat"
+                        link="/stat"
                     />
                     <MenuItem icon={Monitor} text="Machine" link="machine" />
+                    <MenuItem
+                        icon={Clock}
+                        text="Suivi d'heures"
+                        link="/sHeure"
+                    />
                 </menu>
             </div>
             <div className="bottom">

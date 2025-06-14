@@ -1,8 +1,8 @@
 export default function Toggle({status,onChange}) {
     return (
-        <label class="switch">
+        <label className="switch">
             <input type="checkbox" checked={status} onChange={onChange}/>
-            <span class="slider round"></span>
+            <span className="slider round"></span>
         </label>
     );
 };
