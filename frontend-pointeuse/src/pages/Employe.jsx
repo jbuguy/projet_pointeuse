@@ -2,6 +2,7 @@ import { Download, Pen, Plus, Search, Text, X } from "lucide-react";
 import Toggle from "../components/Toggle";
 import { useState } from "react";
 import Modal from "../components/Modal";
+import AjoutEmploye from "../components/AjoutEmploye";
 
 export default function Employe() {
     const [searchValue, setSearch] = useState("");
@@ -74,7 +75,7 @@ export default function Employe() {
                         ajouter
                     </button>
                     <Modal isOpen={ajoutModal} onClose={()=>setAjoutModal(false)} >
-                        <h1>hello world</h1>
+                        <AjoutEmploye/>
                     </Modal>
                     <button className="blueButton">
                         <Download size={20} />

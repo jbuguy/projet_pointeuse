@@ -21,14 +21,14 @@ export default function Menu({ user }) {
                     <MenuItem icon={Home} text="Acceuil" link="/" />
                     <MenuItem icon={Users} text="Employés" link="/employe" />
                     <MenuItem
-                        icon={Calendar}
-                        text="Programme"
-                        link="/programme"
-                    />
-                    <MenuItem
                         icon={Network}
                         text="Hiérachie"
                         link="/hierachie"
+                    />
+                    <MenuItem
+                        icon={Calendar}
+                        text="Programme"
+                        link="/programme"
                     />
                     <MenuItem
                         icon={BarChart3}
