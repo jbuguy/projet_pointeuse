@@ -1,10 +1,11 @@
 import Layout from "./components/Layout";
 import Employe from "./pages/Employe";
 import Home from "./pages/Home";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+
 function App() {
     return (
-        <Routes >
+        <Routes>
             <Route path="/" element={<Layout />}>
                 <Route index element={<Home />} />
                 <Route path="employe" element={<Employe />} />

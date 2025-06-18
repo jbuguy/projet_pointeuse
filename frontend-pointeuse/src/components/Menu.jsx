@@ -18,28 +18,28 @@ export default function Menu({ user }) {
                 <DisplayUser user={user} />
                 <hr />
                 <menu>
-                    <MenuItem icon={Home} text="Acceuil" link="/" />
-                    <MenuItem icon={Users} text="Employés" link="/employe" />
+                    <MenuItem icon={Home} text="Acceuil" link="" />
+                    <MenuItem icon={Users} text="Employés" link="employe" />
                     <MenuItem
                         icon={Network}
                         text="Hiérachie"
-                        link="/hierachie"
+                        link="hierachie"
                     />
                     <MenuItem
                         icon={Calendar}
                         text="Programme"
-                        link="/programme"
+                        link="programme"
                     />
                     <MenuItem
                         icon={BarChart3}
                         text="Statistiques"
-                        link="/stat"
+                        link="stat"
                     />
                     <MenuItem icon={Monitor} text="Machine" link="machine" />
                     <MenuItem
                         icon={Clock}
                         text="Suivi d'heures"
-                        link="/sHeure"
+                        link="sHeure"
                     />
                 </menu>
             </div>
@@ -49,12 +49,12 @@ export default function Menu({ user }) {
                     <MenuItem
                         icon={Settings}
                         text="Parameters"
-                        link="/parameter"
+                        link="parameter"
                     />
                     <MenuItem
                         icon={User}
                         text="Utilisateur"
-                        link="/utilisateur"
+                        link="utilisateur"
                     />
                 </menu>
             </div>
