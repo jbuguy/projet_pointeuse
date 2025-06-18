@@ -12,6 +12,7 @@ import {
     Clock,
 } from "lucide-react";
 export default function Menu({ user }) {
+
     return (
         <div className="mainMenu">
             <div className="top">

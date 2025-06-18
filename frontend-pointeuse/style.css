@@ -5,7 +5,6 @@
     color: white;
     height: 100vh;
     width: fit-content;
-    min-width: 15rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,7 +30,6 @@ body,
     width: 100%;
     min-height: 100vh;
 }
-
 
 main {
     flex-grow: 1;
@@ -395,7 +393,6 @@ form {
     gap: 16px;
 }
 
-
 form fieldset {
     border-radius: 8px;
     border: 2px solid rgba(0, 0, 0, 0.1);
@@ -472,7 +469,31 @@ select:focus {
     width: inherit;
 }
 @media screen and (max-width: 700px) {
-    body,html {
-        font:12px;
+    body,
+    html {
+        font: 12px;
+    }
+}
+@media (max-width: 600px) {
+    .user .text {
+        display: none;
+    }
+    .user{margin: 10;
+    padding: 0;}
+    .mainMenu {
+        max-width: 150px;
+        padding: 4px;
+        align-content: center;
+    }
+    .menuItem {
+        width: 20px;
+        height: 20px;
+        gap: 0;
+        margin: 0;
+        padding: none;
+    }
+    .menuItem span {
+        display: none;
+        margin: 0;
     }
 }
