@@ -5,8 +5,8 @@ import App from './App.jsx'
 
 createRoot(document.getElementById("root")).render(
     <StrictMode>
-        <BrowserRouter  basename='/projet_pointeuse'>
+        <HashRouter>
             <App />
-        </BrowserRouter>
+        </HashRouter>
     </StrictMode>
 );

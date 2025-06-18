@@ -42,7 +42,7 @@ header {
     background-color: white;
     display: flex;
     justify-content: flex-end;
-    gap: 50px;
+    gap: 2rem;
     align-items: center;
     padding: 1rem 2rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
