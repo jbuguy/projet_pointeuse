@@ -65,7 +65,7 @@ export default function Employe() {
     return (
         <div className="mainContent">
             <div className="main-head">
-                <h1>Gestion des Employés</h1>
+                <h1>Employés</h1>
                 <div className="buttons">
                     <button
                         className="blueButton"
