@@ -1,3 +1,4 @@
+import { ArrowDown, ArrowDown10, ChevronDown, ChevronUp } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 export default function DropDown({ values, handleChange, name}) {
@@ -30,22 +31,25 @@ export default function DropDown({ values, handleChange, name}) {
     return (
         <div className="multiselect" ref={ref}>
             <span onClick={() => setOpen(!open)} id="anchor">
-                {filterSelected.length === 0
-                    ? "Sélectionnez une machine"
-                    : filterSelected.map((s) => s.label).join(", ")}
+                <span>
+                    {filterSelected.length === 0
+                        ? "Sélectionnez une machine"
+                        : filterSelected.map((s) => s.label).join(", ")}
+                </span>
+                    {open?<ChevronUp size={14}/>: <ChevronDown size={14}/>}
             </span>
-            {open && (
-                <ul className="items">
-                    {/* <li>
+            {open &&
+                    <ul className="items">
+                        {/* <li>
                                         <input
                                             type="checkbox"
                                             name="machine"
                                             onClick={checkAll}
                                         />tous
                                     </li> */}
-                    {machineRender}
-                </ul>
-            )}
+                        {machineRender}
+                    </ul>
+                }
         </div>
     );
 }

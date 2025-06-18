@@ -95,9 +95,6 @@ export default function Employe() {
                         onChange={searchChange}
                     />
                 </div>
-                <button type="submit" className="blueButton">
-                    filtrer
-                </button>
             </form>
             <hr />
             <table border={0}>
