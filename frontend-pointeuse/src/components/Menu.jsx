@@ -18,8 +18,8 @@ export default function Menu({ user }) {
                 <DisplayUser user={user} />
                 <hr />
                 <menu>
-                    <MenuItem icon={Home} text="Acceuil" link="" />
-                    <MenuItem icon={Users} text="Employés" link="employe" />
+                    <MenuItem icon={Home} text="Acceuil" link="/" />
+                    <MenuItem icon={Users} text="Employés" link="/employe" />
                     <MenuItem
                         icon={Network}
                         text="Hiérachie"
