@@ -60,7 +60,7 @@ export default function AjoutEmploye({ onSubmit }) {
     ));
     function removeService(e,id){
         e.preventDefault();
-        if (ajoutService<=1) {
+        if (ajoutService.length<=1) {
             return;
         }
         setAjoutService(prevAjout => prevAjout.filter(v => v!=id));
@@ -177,7 +177,7 @@ export default function AjoutEmploye({ onSubmit }) {
                             <PlusCircle size={20} /> ajouter un autre
                         </button>
                         <button type="submit" className="blueButton">
-                            ajouter
+                            enregistrer
                         </button>
                     </div>
                 </div>
