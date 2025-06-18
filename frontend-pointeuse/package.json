@@ -10,7 +10,7 @@
         "lint": "eslint .",
         "preview": "vite preview",
         "predeploy": "npm run build",
-        "postbuild": "node copy.js",
+        "postbuild": "node copy.cjs",
         "deploy": "gh-pages -d dist"
     },
     "dependencies": {
