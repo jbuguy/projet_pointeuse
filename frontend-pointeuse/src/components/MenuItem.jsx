@@ -4,6 +4,8 @@ export default function MenuItem({ icon, text, link }) {
     const Icon = icon;
     const location = useLocation();
     const currentPath = location.pathname;
+    console.log(currentPath);
+    console.log("link: "+link);
     return (
         <Link to={link} className={currentPath===link ?"menuItem active" :"menuItem "}>
                 <Icon />
