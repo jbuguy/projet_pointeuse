@@ -7,7 +7,7 @@ namespace api.Models
 {
     public class Machine
     {
-        public int PointeuseId { get; set; }
+        public int Id { get; set; }
         public string Libelle { get; set; } = string.Empty;
         public Site? Site { get; set; }
         public string IpAddress { get; set; } = string.Empty;

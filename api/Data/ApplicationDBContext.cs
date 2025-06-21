@@ -23,7 +23,18 @@ namespace api.Data
             modelBuilder.Entity<Service>()
                 .HasMany(s => s.Employes)
                 .WithMany(m => m.Services);
-            
+            modelBuilder.Entity<Service>()
+                .HasMany(s => s.Schedules)
+                .WithOne(sch => sch.Service)
+                .HasForeignKey(sch => sch.ServiceId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Service>()
+                .HasOne(s => s.DefaultSchedule)
+                .WithMany() 
+                .HasForeignKey(s => s.DefaultScheduleId)
+                .OnDelete(DeleteBehavior.Restrict);
+
             base.OnModelCreating(modelBuilder);
 
         }

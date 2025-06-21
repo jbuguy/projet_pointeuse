@@ -22,7 +22,6 @@ namespace api.Models
         public decimal DureeLimite { get; set; }
         public int? DefaultScheduleId { get; set; }
 
-        [ForeignKey(nameof(DefaultScheduleId))]
         public Schedule? DefaultSchedule { get; set; }
 
         public List<Schedule> Schedules { get; set; } = new List<Schedule>();
