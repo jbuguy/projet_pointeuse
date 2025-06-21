@@ -15,7 +15,7 @@ namespace api.Migrations
                 name: "Employe",
                 columns: table => new
                 {
-                    EmployeId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     First_name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Last_name = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -40,7 +40,7 @@ namespace api.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Employe", x => x.EmployeId);
+                    table.PrimaryKey("PK_Employe", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -83,17 +83,17 @@ namespace api.Migrations
                 name: "EmployeMachine",
                 columns: table => new
                 {
-                    EmployeesEmployeId = table.Column<int>(type: "int", nullable: false),
+                    EmployesId = table.Column<int>(type: "int", nullable: false),
                     MachinesId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_EmployeMachine", x => new { x.EmployeesEmployeId, x.MachinesId });
+                    table.PrimaryKey("PK_EmployeMachine", x => new { x.EmployesId, x.MachinesId });
                     table.ForeignKey(
-                        name: "FK_EmployeMachine_Employe_EmployeesEmployeId",
-                        column: x => x.EmployeesEmployeId,
+                        name: "FK_EmployeMachine_Employe_EmployesId",
+                        column: x => x.EmployesId,
                         principalTable: "Employe",
-                        principalColumn: "EmployeId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_EmployeMachine_Machine_MachinesId",
@@ -107,17 +107,17 @@ namespace api.Migrations
                 name: "EmployeService",
                 columns: table => new
                 {
-                    EmployesEmployeId = table.Column<int>(type: "int", nullable: false),
+                    EmployesId = table.Column<int>(type: "int", nullable: false),
                     ServicesId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_EmployeService", x => new { x.EmployesEmployeId, x.ServicesId });
+                    table.PrimaryKey("PK_EmployeService", x => new { x.EmployesId, x.ServicesId });
                     table.ForeignKey(
-                        name: "FK_EmployeService_Employe_EmployesEmployeId",
-                        column: x => x.EmployesEmployeId,
+                        name: "FK_EmployeService_Employe_EmployesId",
+                        column: x => x.EmployesId,
                         principalTable: "Employe",
-                        principalColumn: "EmployeId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -159,7 +159,7 @@ namespace api.Migrations
                         name: "FK_Period_Employe_EmployeId",
                         column: x => x.EmployeId,
                         principalTable: "Employe",
-                        principalColumn: "EmployeId");
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(

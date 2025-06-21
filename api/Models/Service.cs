@@ -14,8 +14,9 @@ namespace api.Models
         public bool Active { get; set; }
         public int? SiteId { get; set; }
         public Site? Site { get; set; }
-        [Column(TypeName = "decimal(18,2)")]
         public List<Employe> Employes { get; set; } = new List<Employe>();
+        
+        [Column(TypeName = "decimal(18,2)")]
         public decimal ToleranceCalcul { get; set; }
         public bool SoumisHS { get; set; }
         [Column(TypeName = "decimal(18,2)")]

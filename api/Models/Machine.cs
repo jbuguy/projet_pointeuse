@@ -16,6 +16,6 @@ namespace api.Models
         public string TypeMachine { get; set; } = string.Empty;
         public List<Service> Services { get; set; } = new List<Service>();
 
-        public List<Employe> Employees { get; set; } = new List<Employe>();
+        public List<Employe> Employes { get; set; } = new List<Employe>();
     }
 }

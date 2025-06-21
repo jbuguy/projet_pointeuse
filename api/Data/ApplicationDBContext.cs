@@ -18,7 +18,7 @@ namespace api.Data
                 .HasMany(m => m.Services)
                 .WithMany(s => s.Machines);
             modelBuilder.Entity<Machine>()
-                .HasMany(m => m.Employees)
+                .HasMany(m => m.Employes)
                 .WithMany(e => e.Machines);
             modelBuilder.Entity<Service>()
                 .HasMany(s => s.Employes)

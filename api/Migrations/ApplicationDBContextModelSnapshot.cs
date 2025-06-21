@@ -24,13 +24,13 @@ namespace api.Migrations
 
             modelBuilder.Entity("EmployeMachine", b =>
                 {
-                    b.Property<int>("EmployeesEmployeId")
+                    b.Property<int>("EmployesId")
                         .HasColumnType("int");
 
                     b.Property<int>("MachinesId")
                         .HasColumnType("int");
 
-                    b.HasKey("EmployeesEmployeId", "MachinesId");
+                    b.HasKey("EmployesId", "MachinesId");
 
                     b.HasIndex("MachinesId");
 
@@ -39,13 +39,13 @@ namespace api.Migrations
 
             modelBuilder.Entity("EmployeService", b =>
                 {
-                    b.Property<int>("EmployesEmployeId")
+                    b.Property<int>("EmployesId")
                         .HasColumnType("int");
 
                     b.Property<int>("ServicesId")
                         .HasColumnType("int");
 
-                    b.HasKey("EmployesEmployeId", "ServicesId");
+                    b.HasKey("EmployesId", "ServicesId");
 
                     b.HasIndex("ServicesId");
 
@@ -69,11 +69,11 @@ namespace api.Migrations
 
             modelBuilder.Entity("api.Models.Employe", b =>
                 {
-                    b.Property<int>("EmployeId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmployeId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("Birth_date")
                         .HasColumnType("datetime2");
@@ -146,7 +146,7 @@ namespace api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("EmployeId");
+                    b.HasKey("Id");
 
                     b.ToTable("Employe");
                 });
@@ -361,7 +361,7 @@ namespace api.Migrations
                 {
                     b.HasOne("api.Models.Employe", null)
                         .WithMany()
-                        .HasForeignKey("EmployeesEmployeId")
+                        .HasForeignKey("EmployesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -376,7 +376,7 @@ namespace api.Migrations
                 {
                     b.HasOne("api.Models.Employe", null)
                         .WithMany()
-                        .HasForeignKey("EmployesEmployeId")
+                        .HasForeignKey("EmployesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

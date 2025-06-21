@@ -9,7 +9,7 @@ namespace api.Models
 {
     public class Employe
     {
-        public int EmployeId { get; set; }
+        public int Id { get; set; }
         public string First_name { get; set; } = string.Empty;
         public string Last_name { get; set; } = string.Empty;
         public DateTime Birth_date { get; set; }
