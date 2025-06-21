@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace api.Models
 {
-    public class Assaginement
+    public class Assignment
     {
         public int Id { get; set; }
         public int? ScheduleId { get; set; }
