@@ -19,6 +19,10 @@ namespace api.Models
         public bool SoumisHS { get; set; }
         [Column(TypeName = "decimal(18,2)")]
         public decimal DureeLimite { get; set; }
+
+        public Schedule? Defaultshift { get; set; }
+
+        List<Schedule> Shifts { get; set; } = new List<Schedule>();
         List<Machine> Machines { get; set; } = new List<Machine>();
     }
 }
