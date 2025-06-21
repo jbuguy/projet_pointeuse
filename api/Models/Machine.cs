@@ -14,8 +14,8 @@ namespace api.Models
         public string Port { get; set; } = string.Empty;
         public bool IsActive { get; set; }
         public string TypeMachine { get; set; } = string.Empty;
-        List<Service> Services { get; set; } = new List<Service>();
+        public List<Service> Services { get; set; } = new List<Service>();
 
-        List<Employe> Employees { get; set; } = new List<Employe>();
+        public List<Employe> Employees { get; set; } = new List<Employe>();
     }
 }

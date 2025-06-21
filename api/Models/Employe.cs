@@ -19,8 +19,8 @@ namespace api.Models
         public string Fixnumber { get; set; } = string.Empty;
         public DateTime Hire_date { get; set; }
         public bool Is_active { get; set; }
-        List<Service> Services { get; set; } = new List<Service>();
-        List<Machine> Machines { get; set; } = new List<Machine>();
+        public List<Service> Services { get; set; } = new List<Service>();
+        public List<Machine> Machines { get; set; } = new List<Machine>();
         public string Codepointeuse { get; set; } = string.Empty;
         public string Qualification { get; set; } = string.Empty;
         public string Niveau_educatif { get; set; } = string.Empty;
@@ -36,6 +36,6 @@ namespace api.Models
         public DateTime Date_embauche_debut { get; set; }
         public DateTime Date_embauche_fin { get; set; }
 
-         List<Period> Periods { get; set; } = new List<Period>();
+        public List<Period> Periods { get; set; } = new List<Period>();
     }
 }

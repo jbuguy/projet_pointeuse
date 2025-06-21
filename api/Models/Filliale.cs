@@ -10,6 +10,6 @@ namespace api.Models
         public int Id { get; set; }
         public string Libelle { get; set; } = string.Empty;
 
-        List<Site> Sites { get; set; } = new List<Site>();
+        public List<Site> Sites { get; set; } = new List<Site>();
     }
 }
