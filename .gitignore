@@ -1,2 +1,2 @@
-api/obj/
-Generated/
+**/bin/
+**/obj/
