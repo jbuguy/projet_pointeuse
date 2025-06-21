@@ -10,9 +10,10 @@ namespace api.Models
     {
         public int Id { get; set; }
         public string Designation { get; set; } = string.Empty;
-
         public string Name { get; set; } = string.Empty;
         public bool Active { get; set; }
+        public int? SiteId { get; set; }
+        public Site? Site { get; set; }
         [Column(TypeName = "decimal(18,2)")]
         public List<Employe> Employes { get; set; } = new List<Employe>();
         public decimal ToleranceCalcul { get; set; }
