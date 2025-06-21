@@ -35,5 +35,7 @@ namespace api.Models
         public string Type_contrat { get; set; } = string.Empty;
         public DateTime Date_embauche_debut { get; set; }
         public DateTime Date_embauche_fin { get; set; }
+
+         List<Period> Periods { get; set; } = new List<Period>();
     }
 }
