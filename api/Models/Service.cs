@@ -15,14 +15,16 @@ namespace api.Models
         public bool Active { get; set; }
         [Column(TypeName = "decimal(18,2)")]
         List<Site> Employes { get; set; } = new List<Site>();
-        public decimal TolereanceCalcul { get; set; }
+        public decimal ToleranceCalcul { get; set; }
         public bool SoumisHS { get; set; }
         [Column(TypeName = "decimal(18,2)")]
         public decimal DureeLimite { get; set; }
+        public int? DefaultScheduleId { get; set; }
 
-        public Schedule? Defaultshift { get; set; }
+        [ForeignKey(nameof(DefaultScheduleId))]
+        public Schedule? DefaultSchedule { get; set; }
 
-        List<Schedule> Shifts { get; set; } = new List<Schedule>();
+        List<Schedule> Schedules { get; set; } = new List<Schedule>();
         List<Machine> Machines { get; set; } = new List<Machine>();
     }
 }
