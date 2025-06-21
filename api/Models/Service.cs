@@ -14,7 +14,7 @@ namespace api.Models
         public string Name { get; set; } = string.Empty;
         public bool Active { get; set; }
         [Column(TypeName = "decimal(18,2)")]
-        List<Site> Employes { get; set; } = new List<Site>();
+        public List<Site> Employes { get; set; } = new List<Site>();
         public decimal ToleranceCalcul { get; set; }
         public bool SoumisHS { get; set; }
         [Column(TypeName = "decimal(18,2)")]
@@ -24,7 +24,7 @@ namespace api.Models
         [ForeignKey(nameof(DefaultScheduleId))]
         public Schedule? DefaultSchedule { get; set; }
 
-        List<Schedule> Schedules { get; set; } = new List<Schedule>();
-        List<Machine> Machines { get; set; } = new List<Machine>();
+        public List<Schedule> Schedules { get; set; } = new List<Schedule>();
+        public List<Machine> Machines { get; set; } = new List<Machine>();
     }
 }
