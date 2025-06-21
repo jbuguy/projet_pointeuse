@@ -19,5 +19,6 @@ namespace api.Models
         public bool SoumisHS { get; set; }
         [Column(TypeName = "decimal(18,2)")]
         public decimal DureeLimite { get; set; }
+        List<Machine> Machines { get; set; } = new List<Machine>();
     }
 }
