@@ -13,7 +13,6 @@ namespace api.Models
         public Service? Service { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
-
-
+        public List<Shift> Shifts { get; set; } = [];
     }
 }
