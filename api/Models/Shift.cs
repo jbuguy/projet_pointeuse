@@ -15,14 +15,14 @@ namespace api.Models
         public TimeOnly StartTime { get; set; }
         public TimeOnly EndTime { get; set; }
         [Column(TypeName = "decimal(18,2)")]
-        public decimal TolereanceMin { get; set; }
+        public decimal ToleranceMin { get; set; }
         [Column(TypeName = "decimal(18,2)")]
-        public decimal TolereanceMax { get; set; }
+        public decimal ToleranceMax { get; set; }
         [Column(TypeName = "decimal(18,2)")]
-        public decimal TolereancefMin { get; set; }
+        public decimal TolerancefMin { get; set; }
         [Column(TypeName = "decimal(18,2)")]
-        public decimal TolereancefMax { get; set; }
-        public string Day { get; set; } = string.Empty;
+        public decimal TolerancefMax { get; set; }
+        public DayOfWeek Day { get; set; } 
         public bool Break { get; set; }
 
     }
