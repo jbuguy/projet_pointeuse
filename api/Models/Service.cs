@@ -9,9 +9,12 @@ namespace api.Models
     public class Service
     {
         public int Id { get; set; }
+        public string Designation { get; set; } = string.Empty;
+
         public string Name { get; set; } = string.Empty;
         public bool Active { get; set; }
         [Column(TypeName = "decimal(18,2)")]
+        List<Site> Employes { get; set; } = new List<Site>();
         public decimal TolereanceCalcul { get; set; }
         public bool SoumisHS { get; set; }
         [Column(TypeName = "decimal(18,2)")]
