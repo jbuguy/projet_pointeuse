@@ -14,7 +14,7 @@ namespace api.Models
         public string Name { get; set; } = string.Empty;
         public bool Active { get; set; }
         [Column(TypeName = "decimal(18,2)")]
-        public List<Site> Employes { get; set; } = new List<Site>();
+        public List<Employe> Employes { get; set; } = new List<Employe>();
         public decimal ToleranceCalcul { get; set; }
         public bool SoumisHS { get; set; }
         [Column(TypeName = "decimal(18,2)")]
