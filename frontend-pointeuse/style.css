@@ -115,6 +115,52 @@ menu {
     overflow-y: auto;
     overflow-x: hidden;
 }
+.smaller {
+    margin:  auto;
+    max-width: 700px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: #374151;
+}
+@media screen  and (max-width: 750px){
+    .smaller{
+        border-radius: 0;
+        margin: 0;
+    }
+}
+.hello{
+    padding-left:3rem ;
+    margin-bottom: 0;
+}
+.societe{
+    padding-left: 5rem;
+}
+.mainItem {
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+}
+.mainItem h3 {
+    margin-top: 0;
+}
+.mainIcon {
+    color: #152259;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40px;
+    max-height: 40px;
+    min-width: 40px;
+    max-width: 40px;
+    border-radius: 8px;
+    font-weight: bolder;
+    background-color: #eff3fa;
+}
+.mainItem p{
+    text-justify: newspaper;
+}
 .main-head {
     display: flex;
     align-items: center;
@@ -478,8 +524,10 @@ select:focus {
     .user .text {
         display: none;
     }
-    .user{margin: 10;
-    padding: 0;}
+    .user {
+        margin: 10;
+        padding: 0;
+    }
     .mainMenu {
         max-width: 150px;
         padding: 4px;
