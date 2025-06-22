@@ -116,7 +116,7 @@ menu {
     overflow-x: hidden;
 }
 .smaller {
-    margin:  auto;
+    margin: auto;
     max-width: 700px;
     height: 400px;
     display: flex;
@@ -124,17 +124,17 @@ menu {
     justify-content: space-evenly;
     color: #374151;
 }
-@media screen  and (max-width: 750px){
-    .smaller{
+@media screen and (max-width: 750px) {
+    .smaller {
         border-radius: 0;
         margin: 0;
     }
 }
-.hello{
-    padding-left:3rem ;
+.hello {
+    padding-left: 3rem;
     margin-bottom: 0;
 }
-.societe{
+.societe {
     padding-left: 5rem;
 }
 .mainItem {
@@ -158,7 +158,7 @@ menu {
     font-weight: bolder;
     background-color: #eff3fa;
 }
-.mainItem p{
+.mainItem p {
     text-justify: newspaper;
 }
 .main-head {
@@ -282,7 +282,7 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
-.main-head .buttons {
+.buttons {
     display: flex;
     gap: 20px;
 }
@@ -544,4 +544,62 @@ select:focus {
         display: none;
         margin: 0;
     }
+}
+.tabs {
+    display: flex;
+    flex-direction: row;
+    gap: 1px;
+}
+.tab {
+    background-color: rgb(226, 225, 225);
+    color: #000000;
+    padding: 8px 16px;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+}
+.tab-active {
+    background-color: white;
+}
+.suiviHeure {
+    margin: 2%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.mainSuivi {
+    background-color: white;
+    flex-grow: 1;
+    padding: 20px;
+}
+.mainSuivi .buttons {
+    flex-direction: row-reverse;
+    padding: 8px;
+    font-weight: bold;
+}
+.blue-white {
+    background-color: white;
+    color: #007bff;
+    border: 1px solid black;
+}
+.blue-white:hover {
+    background-color: #007bff;
+    color: white;
+}
+.mainSuivi .search{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left:4% ;
+    width: 70%;
+    justify-content: space-between;
+}
+.mainSuivi .searchContainer{
+    flex: 0 0 100%;
+}
+.mainSuivi td{
+    padding: 16px 0px;
+}
+tbody tr:nth-child(odd){
+    /* font-size: 16px; */
+    background-color: #f2f2f2;
 }
