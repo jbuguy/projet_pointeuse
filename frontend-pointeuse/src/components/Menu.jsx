@@ -40,7 +40,7 @@ export default function Menu({ user }) {
                     <MenuItem
                         icon={Clock}
                         text="Suivi d'heures"
-                        link="sHeure"
+                        link="/suivi_heure"
                     />
                 </menu>
             </div>
