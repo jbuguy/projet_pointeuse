@@ -188,11 +188,16 @@ table {
 }
 th {
     padding: 10px;
-    background-color: #001aff1d;
+    border-bottom: 2px solid #808080;
     text-transform: uppercase;
+    padding-left: 0;
+}
+th:hover{
+    cursor: pointer;
+    border-bottom: 2px solid #007bff;
 }
 thead {
-    font-size: 1.2rem;
+    font-size: 1.125rem;
     color: #000000;
 }
 .mainContent hr {
