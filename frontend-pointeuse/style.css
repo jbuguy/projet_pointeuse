@@ -143,6 +143,7 @@ menu {
     cursor: pointer;
 }
 .mainItem h3 {
+    color: #3b3a3a;
     margin-top: 0;
 }
 .mainIcon {
@@ -602,4 +603,36 @@ select:focus {
 tbody tr:nth-child(even){
     /* font-size: 16px; */
     background-color: #f2f2f2;
+}
+.login{
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    margin: auto;
+    min-width: 500px;
+    height: 450px;
+    border-radius: 10px;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+.login form{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+.login button{
+    display: flex;
+    justify-content: center;
+}
+.login .field{
+    color:#000000;
+}
+.login input{
+    border:1px solid rgba(0, 0, 0, 0.316);
+    border-radius: 4px;
+    padding: 0.5rem;
 }

@@ -24,7 +24,7 @@ export default function Menu({ user }) {
                     <MenuItem
                         icon={Network}
                         text="Hiérachie"
-                        link="hierachie"
+                        link="/hierachie"
                     />
                     <MenuItem
                         icon={Calendar}
