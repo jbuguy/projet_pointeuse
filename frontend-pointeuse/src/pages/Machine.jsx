@@ -1,5 +1,6 @@
 import { Download, Pen, Plus, Search, X } from "lucide-react";
 import { useState } from "react";
+import Toggle from "../components/Toggle";
 
 export default function Machine() {
     const [searchValue, setSearch] = useState("");
@@ -10,7 +11,7 @@ export default function Machine() {
             address: "192.168.1.10",
             site: "Site A",
             filiale: "Group X",
-            etat: "Active",
+            etat: true,
         },
         {
             code: "002",
@@ -18,7 +19,7 @@ export default function Machine() {
             address: "192.168.1.20",
             site: "Site B",
             filiale: "Group Y",
-            etat: "Inactive",
+            etat: false,
         },
         {
             code: "003",
@@ -26,7 +27,7 @@ export default function Machine() {
             address: "192.168.1.30",
             site: "Site C",
             filiale: "Group Z",
-            etat: "Active",
+            etat: true,
         },
     ];
     const [machines, setMachines] = useState(machineData);
@@ -41,7 +42,12 @@ export default function Machine() {
             <td>{machine.address}</td>
             <td>{machine.site}</td>
             <td>{machine.filiale}</td>
-            <td>{machine.etat}</td>
+            <td>
+                <Toggle
+                    status={machine.etat}
+                    onChange={() => changeStatus(machine.code)}
+                />
+            </td>
             <td className="btn-action">
                 <button className="square-btn bg-blue">
                     <Download size={20} />
@@ -59,7 +65,16 @@ export default function Machine() {
         </tr>
     ));
     function removeMachine(code) {
-        setMachines((prevMachine) => prevMachine.filter((m) => m.code != code));
+        setMachines((prevMachines) =>
+            prevMachines.filter((m) => m.code != code)
+        );
+    }
+    function changeStatus(code) {
+        setMachines((prevMachines) =>
+            prevMachines.map((m) =>
+                m.code === code ? { ...m, etat: !m.etat } : m
+            )
+        );
     }
     return (
         <div className="mainContent">
