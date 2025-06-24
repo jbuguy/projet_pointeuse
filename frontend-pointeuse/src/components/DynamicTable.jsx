@@ -28,22 +28,24 @@ export default function DynamicTable(prop) {
         if(typeof a ==="number" && typeof b === "number"){
             return sorting.ascending? a-b : b-a;
         }
-        return String(a).localeCompare(String(b));
+        return sorting.ascending
+            ? String(a).localeCompare(String(b))
+            : String(b).localeCompare(String(a));
     }
     return (
         <table>
             <thead>
                 <tr>
                     {Object.entries(prop.header).map(([k, v]) => (
-                        <th key={k} onClick={()=>sort(k)}>
+                        <th key={k} onClick={()=>sort(k)} scope="col"className={sorting.field===k&&"active-col"}>
                             <div className="th-content">
                                 <span>{v === "" ? k : v}</span>
                                 <span>
                                     {sorting.field === k &&
                                         (sorting.ascending ? (
-                                            <ChevronDown />
+                                            <ChevronDown className="active-text"/>
                                         ) : (
-                                            <ChevronUp />
+                                            <ChevronUp className="active-text" />
                                         ))}
                                 </span>
                             </div>

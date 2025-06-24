@@ -648,3 +648,9 @@ tbody tr:nth-child(even){
     align-items: center;
         
 }
+.active-col{
+    border-bottom: 2px solid #007bff;
+}
+.active-text{
+    color: #0068d7;
+}
