@@ -1,4 +1,3 @@
-@import "tailwindcss";
 .mainMenu {
     position: sticky;
     top: 0;
@@ -188,6 +187,7 @@ table {
     border-collapse: collapse;
 }
 th {
+    text-overflow: ellipsis;
     padding: 10px;
     border-bottom: 2px solid #808080;
     text-transform: uppercase;
@@ -641,4 +641,10 @@ tbody tr:nth-child(even){
     border:1px solid rgba(0, 0, 0, 0.316);
     border-radius: 4px;
     padding: 0.5rem;
+}
+.th-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+        
 }

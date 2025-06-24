@@ -12,7 +12,6 @@ import {
     Clock,
 } from "lucide-react";
 export default function Menu({ user }) {
-
     return (
         <div className="mainMenu">
             <div className="top">
@@ -36,7 +35,7 @@ export default function Menu({ user }) {
                         text="Statistiques"
                         link="stat"
                     />
-                    <MenuItem icon={Monitor} text="Machine" link="machine" />
+                    <MenuItem icon={Monitor} text="Machine" link="/machine" />
                     <MenuItem
                         icon={Clock}
                         text="Suivi d'heures"

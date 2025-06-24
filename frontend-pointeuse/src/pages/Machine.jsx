@@ -1,6 +1,7 @@
 import { Download, Pen, Plus, Search, X } from "lucide-react";
 import { useState } from "react";
 import Toggle from "../components/Toggle";
+import DynamicTable from "../components/DynamicTable";
 
 export default function Machine() {
     const [searchValue, setSearch] = useState("");
