@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { ChevronDown, Edit, Trash2, MapPin, Settings ,Plus, Book } from 'lucide-react';
 import Modal from "../components/Modal";
+import AjoutService from '../components/AjoutService';
 
 export default function Hierachie() {
   const [showNewSiteForm, setShowNewSiteForm] = useState(false);
+  const [ajoutModal,setAjoutModal]=useState(false);
+
   const [newSiteName, setNewSiteName] = useState('');
-  const [newSiteAddress, setNewSiteAddress] = useState('');
   const [branches, setBranches] = useState([
     {
       id: 1,
@@ -18,8 +20,18 @@ export default function Hierachie() {
           id: 1,
           name: 'Site Lille',
           expanded: false,
-          address: '123 Rue de la Paix, Lille',
-          services: ['Service Commercial', 'Service Technique']
+          services: [{
+            id: 1,
+            Designation: "Service Commercial",
+            name: "atil1",
+            Active: true,
+            ToleranceCalcul: true,
+            SoumisHS: true,
+            DureeLimite: 5,
+            DefaultSchedule: "morning shift",
+            Schedules: ["morning shift", "evening shift"],
+            Machines: ["Machine 1", "Machine 2"]
+          }]
         }
       ]
     },{
@@ -48,8 +60,9 @@ export default function Hierachie() {
     ));
   };
 
+
   const addNewSite = (branchId) => {
-    if (newSiteName.trim() && newSiteAddress.trim()) {
+    if (newSiteName.trim()) {
       setBranches(branches.map(branch => 
         branch.id === branchId 
           ? { 
@@ -57,7 +70,7 @@ export default function Hierachie() {
               sites: [...branch.sites, {
                 id: Date.now(),
                 name: newSiteName,
-                address: newSiteAddress,
+                expanded: false,
                 services: []
               }],
               siteCount: branch.siteCount + 1
@@ -81,15 +94,28 @@ export default function Hierachie() {
         : branch
     ));
   };
+  const toggleSite = (siteId) => {
+    setBranches(branches.map(branch => ({
+      ...branch,
+      sites: branch.sites.map(site => 
+        site.id === siteId 
+          ? { ...site, expanded: !site.expanded }
+          : site
+      )
+    })));
+  };
 
   return (
     <div className="mainContent">
+       <Modal isOpen={ajoutModal} onClose={()=>setAjoutModal(false)} >
+         <AjoutService/>
+       </Modal>
       <div className="main-head">
-                <h1>Hiérachie</h1>
-            </div>
+        <h1>Hiérachie</h1>
+      </div>
       {/* Header Button */}
       <button className="blueButton">
-                                <Plus />
+        <Plus />
         Nouvelle Filiale
       </button>
       <hr/>
@@ -148,9 +174,8 @@ export default function Hierachie() {
                 {/* New Site Form */}
                 {showNewSiteForm && (
                   <div>
-                      <hr/>
+                    <hr/>
                     <div className="input-site">
-
                       <h4 className="font-medium">Nouveau Site</h4>
                       <form className="">
                         <input
@@ -160,7 +185,6 @@ export default function Hierachie() {
                           onChange={(e) => setNewSiteName(e.target.value)}
                           className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
                         />
-                        
                         <div className="filliale-Container-text">
                           <button 
                             onClick={() => addNewSite(branch.id)}
@@ -185,34 +209,30 @@ export default function Hierachie() {
                 {branch.sites.map((site) => (
                   <div key={site.id} className="site-total">
                     <div className="filliale-Container">
-                     
-                    
                       <div className="filliale-Container-text">
-                         <button 
-                    onClick={() => toggleBranch(branch.id)}
-                    className="text-blue-500 hover:text-blue-600 transition-colors"
-                  >
-                    <ChevronDown 
-                      className={`w-5 h-5 transition-transform ${
-                        branch.expanded ? 'rotate-180' : ''
-                      }`} 
-                    />
-                  </button>
+                        <button 
+                          onClick={() => toggleSite(site.id)}
+                          className="text-blue-500 hover:text-blue-600 transition-colors"
+                        >
+                          <ChevronDown 
+                            className={`w-5 h-5 transition-transform ${
+                              site.expanded ? 'rotate-180' : ''
+                            }`} 
+                          />
+                        </button>
                         <MapPin className="w-5 h-5 text-green-500 mt-0.5" />
                         <div className="filiale-Container-text">
                           <div>
                             <h2 className="font-medium text-gray-900">{site.name}</h2>
                             <div className="mt-4">
                               <button 
-                                onClick={() => setShowNewSiteForm(!showNewSiteForm)}
+                                onClick={() => setAjoutModal(true)}
                                 className="blueButton bg-green" style={{ marginLeft: '1rem' }}
                               >
                                 <Plus />
                                 Ajouter un Service
                               </button>
                             </div>
-                            {/* Services */}
-                            
                           </div>
                         </div>
                       </div>
@@ -228,6 +248,40 @@ export default function Hierachie() {
                         </button>
                       </div>
                     </div>
+                    {/* Expanded Site Content */}
+                    {site.expanded && site.services && site.services.length > 0 && (
+                      <div className="ml-8 mt-2 space-y-2">
+                        <hr />
+                        {site.services.map((service) => (
+                          <div key={service.id || service} className="site-total">
+                            <div className="filliale-Container">
+                              <div className='filliale-Container-text'>
+                                <Settings/>
+                                <div>
+                                  <h2>{service.name}</h2>
+                                  <p>Designation: {service.Designation}</p>
+                                  <p>Active: {service.Active ? 'Oui' : 'Non'}</p>
+                                  <p>ToleranceCalcul: {service.ToleranceCalcul ? 'Oui' : 'Non'}</p>
+                                  <p>SoumisHS: {service.SoumisHS ? 'Oui' : 'Non'}</p>
+                                  <p>Durée Limite: {service.DureeLimite}</p>
+                                  <p>Default Schedule: {service.DefaultSchedule}</p>
+                                  <p>Horaires: {service.Schedules && service.Schedules.join(', ')}</p>
+                                  <p>Machines: {service.Machines && service.Machines.join(', ')}</p>
+                                </div>
+                              </div>
+                              <div className="flex gap-2">
+                                <button className="text-blue-500 hover:text-blue-600 p-1">
+                                  <Edit className="w-4 h-4" />
+                                </button>
+                                <button className="text-red-500 hover:text-red-600 p-1">
+                                  <Trash2 className="w-4 h-4" />
+                                </button>
+                              </div>
+                            </div>    
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>

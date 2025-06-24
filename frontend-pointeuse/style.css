@@ -638,3 +638,9 @@ tbody tr:nth-child(even){
 .input-site{
     padding: 10px;
 }
+.site-total{
+    margin: 10px;
+    border: #57555560 1px solid;
+    font-weight: bold;
+    border-radius: 8px;
+}
