@@ -44,7 +44,14 @@ export default function Logs() {
     const [dateDebut, setDateDebut] = useState("");
     const [dateFin, setDateFin] = useState("");
     const [filteredLogs, setFilteredLogs] = useState(logsData);
-    console.log(logsData)
+    const logs =filteredLogs.map(log=>
+        <tr key={log.id}>
+            <td>{log.type}</td>
+            <td>{log.date}</td>
+            <td>{log.utilisateur}</td>
+            <td>{log.description}</td>
+        </tr>
+    )
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -108,7 +115,17 @@ export default function Logs() {
                 </button>
             </form>
             <hr />
-            <DynamicTable header={{type:"",date:"",utilisateur:"",description:""}} values={filteredLogs}/>
+            <table border={0}>
+                <thead>
+                    <tr>
+                        <th>type</th>
+                        <th>date</th>
+                        <th>user</th>
+                        <th>description</th>
+                    </tr>
+                </thead>
+                <tbody>{logs}</tbody>
+            </table>
         </div>
     );
 };
