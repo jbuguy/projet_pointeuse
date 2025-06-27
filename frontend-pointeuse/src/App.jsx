@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import SuiviHeure from "./pages/SuiviHeure";
 import LoginPage from "./pages/LoginPage";
 import Machine from "./pages/Machine";
+import Hierachie from "./pages/Hierachie";
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 <Route path="employe" element={<Employe />} />
                 <Route path="machine" element={<Machine/>}/>
                 <Route path="suivi_heure" element={<SuiviHeure />} />
+                <Route path="hierachie" element={<Hierachie />} />
             </Route>
         </Routes>
     );

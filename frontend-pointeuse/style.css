@@ -736,3 +736,45 @@ table {
 .dropDown button:hover{
     background-color: rgb(236, 236, 236);
 }
+
+.filliale-Container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.rotate-180{
+    transform: rotate(180deg);
+}
+.filliale-Container-text{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    border-radius: 8px;
+        gap: 15px;
+    padding: 10px;
+}
+.filliale-total{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: #57555560 1px solid;
+    font-weight: bold;
+    border-radius: 8px;
+    padding-bottom: 5px;
+}
+.centeredinadiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+}
+.input-site{
+    padding: 10px;
+}
+.site-total{
+    margin: 10px;
+    border: #57555560 1px solid;
+    font-weight: bold;
+    border-radius: 8px;
+}
