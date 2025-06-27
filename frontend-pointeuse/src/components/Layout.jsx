@@ -1,14 +1,15 @@
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet, useNavigate } from "react-router-dom";
 import Menu from "./Menu";
-import { Bell } from "lucide-react";
+import { Bell, LogIn } from "lucide-react";
 import userPlaceholder from "../assets/userplaceholder.jpg";
+import LoginPage from "../pages/LoginPage";
 export default function Layout() {
     const user = {
         img: userPlaceholder ,
         name: "aziz manager",
         type: "HR Administrator",
     };
-    
+    const navigate = useNavigate();
     return (
         <>
             <Menu
@@ -17,7 +18,9 @@ export default function Layout() {
             <main>
                 <header>
                     <Bell size={24} />
-                    <button className="blueButton"> log out</button>
+                    <button className="blueButton" onClick={()=> {
+                        navigate("/login")
+                    }}> log out</button>
                 </header>
                 <Outlet context={user} />
             </main>

@@ -13,6 +13,7 @@ export default function Home() {
             icon: TextSelect,
             head: "Voir les logs",
             text: "visualiser les logs du système pour assurer le suivi des activités.",
+            link: "suivi_heure",
         },
         {
             icon: MessageSquareX,
@@ -34,6 +35,7 @@ export default function Home() {
                         icon={item.icon}
                         head={item.head}
                         text={item.text}
+                        link={item.link}
                     />
                 ))}
             </div>

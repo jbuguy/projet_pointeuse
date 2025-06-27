@@ -30,15 +30,20 @@ body,
     width: 100%;
     min-height: 100vh;
 }
-
+#root {
+    max-width: 100vw;
+}
 main {
     flex-grow: 1;
+    flex: 1 1 0; /* flex-grow:1, flex-shrink:1, flex-basis:0 */
+    min-width: 0;
     display: flex;
     flex-direction: column;
 }
 header {
     background-color: white;
     display: flex;
+    min-width: 0;
     justify-content: flex-end;
     gap: 2rem;
     align-items: center;
@@ -143,6 +148,7 @@ menu {
     cursor: pointer;
 }
 .mainItem h3 {
+    color: #3b3a3a;
     margin-top: 0;
 }
 .mainIcon {
@@ -179,19 +185,18 @@ menu {
     align-items: stretch;
 }
 
-table {
-    text-align: left;
-    width: 100%;
-    overflow: auto;
-    border-collapse: collapse;
-}
 th {
+    text-overflow: ellipsis;
     padding: 10px;
-    background-color: #001aff1d;
+    border-bottom: 2px solid #808080;
     text-transform: uppercase;
+    padding-left: 0;
+}
+th:hover {
+    cursor: pointer;
 }
 thead {
-    font-size: 1.2rem;
+    font-size: 1.125rem;
     color: #000000;
 }
 .mainContent hr {
@@ -563,12 +568,18 @@ select:focus {
 .suiviHeure {
     margin: 2%;
     flex-grow: 1;
+    flex: 1 1 0; /* flex-grow:1, flex-shrink:1, flex-basis:0 */
+    min-width: 0;
     display: flex;
+    min-width: 0;
     flex-direction: column;
 }
 .mainSuivi {
     background-color: white;
     flex-grow: 1;
+    flex: 1 1 0; /* flex-grow:1, flex-shrink:1, flex-basis:0 */
+    min-width: 0;
+    min-width: 0;
     padding: 20px;
 }
 .mainSuivi .buttons {
@@ -585,24 +596,147 @@ select:focus {
     background-color: #007bff;
     color: white;
 }
-.mainSuivi .search{
+.mainSuivi .search {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-left:4% ;
+    margin-left: 4%;
     width: 70%;
     justify-content: space-between;
 }
-.mainSuivi .searchContainer{
+.mainSuivi .searchContainer {
     flex: 0 0 100%;
 }
-.mainSuivi td{
+.mainSuivi td {
     padding: 16px 0px;
 }
-tbody tr:nth-child(even){
+tbody tr:nth-child(even) {
     /* font-size: 16px; */
     background-color: #f2f2f2;
 }
+.login {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    margin: auto;
+    min-width: 500px;
+    height: 450px;
+    border-radius: 10px;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+.login form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex: 1 1 0; /* flex-grow:1, flex-shrink:1, flex-basis:0 */
+    min-width: 0;
+    justify-content: space-between;
+}
+.login button {
+    display: flex;
+    justify-content: center;
+}
+.login .field {
+    color: #000000;
+}
+.login input {
+    border: 1px solid rgba(0, 0, 0, 0.316);
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+.th-content {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-left: 8px;
+    justify-content: space-between;
+    align-items: center;
+}
+.th-content span {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.active-col,
+.active-col + .cell-plus {
+    border-bottom: 2px solid #007bff;
+}
+.active-text {
+    position: relative;
+    color: #0068d7;
+}
+.remove-btn {
+    display: none;
+    position: relative;
+    right: -5px;
+    bottom: 2px;
+    background: transparent;
+    display: inline-block;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: #ffffff;
+}
+th:hover .remove-btn {
+    color: #acacac;
+}
+.plus-table {
+    color: white;
+    border-radius: 50%;
+    background-color: #0068d7;
+    visibility: hidden;
+    z-index: 10;
+    padding: 4px;
+    overflow: visible;
+}
+.cell-plus {
+    color: #0068d7;
+    padding: 0;
+    width: 5px;
+}
+
+.cell-plus:hover .plus-table {
+    visibility: visible;
+}
+
+.hover-red:hover {
+    background-color: red;
+}
+table {
+    text-align: left;
+    overflow: hidden;
+    width: 100%;
+    border-collapse: collapse;
+}
+.table-container {
+    overflow: hidden;
+    overflow-x: scroll;
+}
+.dropDown{
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 4px;
+    min-width: 100px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.dropDown button{
+    background-color: white;
+    border: none;
+    text-align: left;
+    font-size: 1rem;
+    padding: 4px;
+    font-weight: bold;
+}
+.dropDown button:hover{
+    background-color: rgb(236, 236, 236);
+}
+
 .filliale-Container{
     display: flex;
     justify-content: space-between;
